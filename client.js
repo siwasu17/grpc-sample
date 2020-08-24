@@ -15,7 +15,7 @@ const packageDefinition = protoLoader.loadSync(
 
 const helloProto = grpc.loadPackageDefinition(packageDefinition)
 
-const client = new helloProto.hello.Greeter('127.0.0.1:6565', grpc.credentials.createInsecure())
+const client = new helloProto.hello.Greeter('127.0.0.1:50051', grpc.credentials.createInsecure())
 
 client.sayHello({id:1, name: '太郎'}, (error, response) => {
   if(!error){
